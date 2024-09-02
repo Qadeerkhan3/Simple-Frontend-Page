@@ -6,7 +6,6 @@ body, ul, li, a, input, button {
     text-decoration: none;
     box-sizing: border-box;
     font-family: Arial, sans-serif;
-    color: white;
 }
 
 /* Navbar styling */
@@ -16,9 +15,13 @@ body, ul, li, a, input, button {
     align-items: center;
     background-color: #333;
     padding: 10px 20px;
+    color: white;
+    position: sticky;
+    top: 0;
+    z-index: 1;
 }
 
-.navbar-brand {
+.navbar-title {
     font-size: 1.5em;
     color: #fff;
     font-weight: bold;
@@ -95,4 +98,98 @@ body, ul, li, a, input, button {
     .search-input {
         width: 70%;
     }
+}
+
+/* Main content styling */
+main {
+    padding: 20px;
+    background-color: #f4f4f4; /* Light background for contrast */
+}
+
+/* Hero section styling */
+.hero-section {
+    background-image: linear-gradient(to right, #555, #333);
+    color: #fff;
+    padding: 60px 30px;
+    text-align: center;
+    border-radius: 10px;
+    margin-bottom: 40px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.hero-section h1 {
+    font-size: 3em;
+    margin-bottom: 25px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.hero-section p {
+    font-size: 1.4em;
+    margin-bottom: 25px;
+    line-height: 1.6;
+}
+
+.hero-button {
+    padding: 15px 30px;
+    background-color: #444;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.hero-button:hover {
+    background-color: #222;
+    transform: translateY(-3px);
+}
+
+/* Content section styling */
+.content-section {
+    background-color: #fff;
+    padding: 40px 30px;
+    margin-bottom: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.content-section:hover {
+    transform: translateY(-5px);
+}
+
+.content-section h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: #333;
+    border-bottom: 3px solid #ddd;
+    padding-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.content-section p {
+    font-size: 1.1em;
+    line-height: 1.8;
+    color: #666;
+}
+
+/* Add subtle animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.content-section {
+    animation: fadeIn 0.5s ease-in-out;
 }
