@@ -103,7 +103,7 @@ body, ul, li, a, input, button {
 /* Main content styling */
 main {
     padding: 20px;
-    background-color: #f4f4f4; /* Light background for contrast */
+    background-color: #f4f4f4;
 }
 
 /* Hero section styling */
@@ -203,3 +203,9 @@ footer {
     margin-top: 30px;
     border-radius: 5px;
 }
+
+.highlight {
+    background-color: yellow;
+    font-weight: bold;
+}
+

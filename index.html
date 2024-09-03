@@ -21,34 +21,35 @@
             <li class="nav-item"><a href="#Contact" class="nav-link">Contact</a></li>
         </ul>
         <div class="navbar-search">
-            <input type="text" placeholder="Search..." class="search-input">
-            <button class="search-btn">Search</button>
+            <input type="text" class="search-input" id="searchInput" placeholder="Search...">
+            <button class="search-btn" id="searchBtn">Search</button>
         </div>
+
     </nav>
 
     <main>
-        <section class="hero-section" id="Home">
+        <section class="hero-section searchable-item" id="Home">
             <h1>Welcome to Our Website</h1>
             <p>Your success starts here. Explore our services and find the right solutions for your business.</p>
             <a href="#" class="hero-button">Learn More</a>
         </section>
-    
-        <section class="content-section" id="About">
+
+        <section class="content-section searchable-item" id="About">
             <h2>About Us</h2>
             <p>We are a leading company in our industry, dedicated to providing top-notch services to our clients.</p>
         </section>
-    
-        <section class="content-section" id="Services">
+
+        <section class="content-section searchable-item" id="Services">
             <h2>Our Services</h2>
             <p>From web development to marketing, we offer a wide range of services to help your business grow.</p>
         </section>
-    
-        <section class="content-section" id="Portfolio">
+
+        <section class="content-section searchable-item" id="Portfolio">
             <h2>Portfolio</h2>
             <p>Take a look at some of our recent projects and see the quality of our work.</p>
         </section>
-    
-        <section class="content-section" id="Contact">
+
+        <section class="content-section searchable-item" id="Contact">
             <h2>Contact Us</h2>
             <p>Have questions? Get in touch with us and we'll be happy to help.</p>
         </section>
@@ -57,7 +58,34 @@
     <footer>
         <p>&copy; 2024 Home-Work. All rights reserved.</p>
     </footer>
-    
+
+    <script>
+        document.getElementById('searchBtn').addEventListener('click', function () {
+            // Get the search query
+            var query = document.getElementById('searchInput').value.toLowerCase();
+
+            // Get all items you want to search through
+            var items = document.querySelectorAll('.searchable-item');
+
+            // Clear any previous highlights
+            items.forEach(function (item) {
+                item.innerHTML = item.textContent; // Reset the content to its original state
+            });
+
+            // If the query is not empty, highlight the matches
+            if (query) {
+                items.forEach(function (item) {
+                    var text = item.textContent;
+                    var regex = new RegExp(`(${query})`, 'gi');
+                    var highlightedText = text.replace(regex, `<span class="highlight">$1</span>`);
+                    item.innerHTML = highlightedText;
+                });
+            }
+        });
+
+
+    </script>
 </body>
+</script>
 
 </html>
